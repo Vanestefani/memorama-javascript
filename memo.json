@@ -1,0 +1,66 @@
+[
+     {
+          "src": "../img/css3logo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/css3logo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/html5logo.jpg",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/html5logo.jpg",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/pythonlogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/pythonlogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/phplogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/phplogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/cpluspluslogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/cpluspluslogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/jslogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/jslogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/javalogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/javalogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/golanglogo.png",
+          "default" : "./img/cover.jpg"
+     },
+     {
+          "src": "../img/golanglogo.png",
+          "default" : "./img/cover.jpg"
+     }
+]
