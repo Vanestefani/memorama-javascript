@@ -23,16 +23,26 @@ class Memorama {
     });
   }
   async cargarRespuestas() {
+    /*Extraer datos de json */
     const respuesta = await fetch("../memo.json");
     const data = await respuesta.json();
-    this.totalTargetas=data;
+    this.totalTargetas = data;
+    /*Orden aleatorio */
     if (this.totalTargetas.length > 0) {
       this.totalTargetas.sort(orden);
       function orden(a, b) {
         return Math.random() - 0.5;
       }
     }
-    console.log(this.totalTargetas);
+    /*saber el numero de targetas*/
+    this.numeroTargetas = this.totalTargetas.length;
+    /*Ubicacion de targetas (template)*/
+    let html = '';
+    this.totalTargetas.forEach(card => {
+      html += `<div class="tarjeta"><img class="tarjeta-img" src=${card.src} alt="imagenes"></div>`
+
+    })
+    this.$contenedorTargetas.innerHTML=html;
   }
 }
 
