@@ -53,9 +53,24 @@ class Memorama {
       });
     });
   }
+  /*Obtener targeta que se dio clic*/
   clickTarjeta(e) {
+    this.voltearTarjetas(e);
     let sourceImage = e.target.childNodes[0].attributes[1].value;
-    console.log(sourceImage);
+    this.verificaTarjetas.push(sourceImage);
+    let targeta = e.target;
+    this.agregarTarjetas.unshift(targeta);
+
+  }
+  /*Voltear targetas*/
+  voltearTarjetas(e){
+e.target.style.backgroundImage="none";
+e.target.style.backgroundColor="white";
+e.target.childNodes[0].style.display="block";
+  }
+  /*Comparar Tarjetas*/
+  compararTarjetas(){
+
   }
 }
 
