@@ -7,7 +7,7 @@ class Memorama {
     this.errores = 0;
     this.dificultad = "";
     this.tarjetasCorrectas = [];
-
+    this.numeroIntentos = 0;
     this.agregarTarjetas = [];
     /**Propiedades HTML */
     this.$contenedorTarjetas = document.querySelector(".contenedor-tarjetas");
@@ -23,10 +23,44 @@ class Memorama {
   eventos() {
     window.addEventListener("DOMContentLoaded", () => {
       this.cargarRespuestas();
+      this.seleccionDificultad();
     });
   }
+  /*Dificultad del juego*/
+  seleccionDificultad() {
+    const mensaje = prompt(
+      "selecciona el nivel de dificultad que puede ser :Fácil , Intermedio,Difícil .Si n sellecionas un nivel por defecto el nivel sera intermedio"
+    );
+    if (
+      !mensaje ||
+      mensaje.toLowerCase() === "intermedio" ||
+      mensaje.toLowerCase() === "I"
+    ) {
+      this.numeroIntentos = 5;
+      this.dificultad = "Intermedio";
+    } else if (
+      mensaje.toLowerCase() === "facil" ||
+      mensaje.toLowerCase() === "fácil" ||
+      mensaje.toLowerCase() === "f"
+    ) {
+      this.numeroIntentos = 7;
+      this.dificultad = "Fácil";
+    } else if (
+      mensaje.toLowerCase() === "dificil" ||
+      mensaje.toLowerCase() === "difícil" ||
+      mensaje.toLowerCase() === "d"
+    ) {
+      this.numeroIntentos = 3;
+      this.dificultad = "Difícil";
+    } else {
+      this.numeroIntentos = 5;
+      this.dificultad = "Intermedio";
+    }
+    this.contenedorError();
+    console.log(this.numeroIntentos, this.dificultad);
+  }
+  /*Extraer datos de json */
   async cargarRespuestas() {
-    /*Extraer datos de json */
     const respuesta = await fetch("../memo.json");
     const data = await respuesta.json();
     this.totalTarjetas = data;
@@ -64,7 +98,6 @@ class Memorama {
     let tarjeta = e.target;
     this.agregarTarjetas.unshift(tarjeta);
     this.compararTarjetas();
-    this.contenedorError();
   }
   /*Voltear tarjetas*/
   voltearTarjetas(e) {
@@ -129,9 +162,8 @@ class Memorama {
         location.reload();
       }, 4000);
     }
-
   }
-  contenedorError(){
+  contenedorError() {
     this.$errorcontenedor.classList.add("error");
     this.incremetadorErrores();
     this.$contenedorGeneral.appendChild(this.$errorcontenedor);
