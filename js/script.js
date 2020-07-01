@@ -15,7 +15,7 @@ class Memorama {
     this.$mensaje = document.querySelector(".mensaje");
     this.$pantallaBloqueada = document.querySelector(".pantalla-bloqueada");
     this.$errorcontenedor = document.createElement("div");
-
+    this.$nivelDificultad = document.createElement("div");
     /*eventos*/
     this.eventos();
   }
@@ -57,6 +57,7 @@ class Memorama {
       this.dificultad = "Intermedio";
     }
     this.contenedorError();
+    this.mensajeIntentos();
     console.log(this.numeroIntentos, this.dificultad);
   }
   /*Extraer datos de json */
@@ -153,7 +154,7 @@ class Memorama {
     this.$errorcontenedor.innerText = `Errores ${this.errores}`;
   }
   derrotaJuego() {
-    if (this.errores === 5) {
+    if (this.errores === this.numeroIntentos) {
       setTimeout(() => {
         this.$pantallaBloqueada.style.display = "block";
         this.$mensaje.innerText = "Has perdido";
@@ -167,6 +168,11 @@ class Memorama {
     this.$errorcontenedor.classList.add("error");
     this.incremetadorErrores();
     this.$contenedorGeneral.appendChild(this.$errorcontenedor);
+  }
+  mensajeIntentos() {
+    this.$nivelDificultad.classList.add("nivel-dificultad");
+    this.$nivelDificultad.innerHTML = `Nivel de difícultad : ${this.dificultad}`;
+    this.$contenedorGeneral.appendChild(this.$nivelDificultad);
   }
 }
 
