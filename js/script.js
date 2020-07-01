@@ -24,6 +24,13 @@ class Memorama {
     window.addEventListener("DOMContentLoaded", () => {
       this.cargarRespuestas();
       this.seleccionDificultad();
+      windows.addEventListener(
+        "contextmenu",
+        (e) => {
+          e.preventDefault();
+        },
+        false
+      );
     });
   }
   /*Dificultad del juego*/
