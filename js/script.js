@@ -14,6 +14,8 @@ class Memorama {
     this.$contenedorGeneral = document.querySelector(".contenedor-general");
     this.$mensaje = document.querySelector(".mensaje");
     this.$pantallaBloqueada = document.querySelector(".pantalla-bloqueada");
+    this.$errorcontenedor = document.createElement("div");
+
     /*eventos*/
     this.eventos();
   }
@@ -62,6 +64,7 @@ class Memorama {
     let tarjeta = e.target;
     this.agregarTarjetas.unshift(tarjeta);
     this.compararTarjetas();
+    this.contenedorError();
   }
   /*Voltear tarjetas*/
   voltearTarjetas(e) {
@@ -93,6 +96,8 @@ class Memorama {
       } else {
         this.reversoTarjetas(this.agregarTarjetas);
         this.errores++;
+        this.incremetadorErrores();
+        this.derrotaJuego();
       }
       this.verificaTarjetas.splice(0);
       this.agregarTarjetas.splice(0);
@@ -109,6 +114,27 @@ class Memorama {
         location.reload();
       }, 4000);
     }
+  }
+  /*Derrota juego errores*/
+  incremetadorErrores() {
+    this.$errorcontenedor.innerText = `Errores ${this.errores}`;
+  }
+  derrotaJuego() {
+    if (this.errores === 5) {
+      setTimeout(() => {
+        this.$pantallaBloqueada.style.display = "block";
+        this.$mensaje.innerText = "Has perdido";
+      }, 1000);
+      setTimeout(() => {
+        location.reload();
+      }, 4000);
+    }
+
+  }
+  contenedorError(){
+    this.$errorcontenedor.classList.add("error");
+    this.incremetadorErrores();
+    this.$contenedorGeneral.appendChild(this.$errorcontenedor);
   }
 }
 
