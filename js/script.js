@@ -12,8 +12,8 @@ class Memorama {
     /**Propiedades HTML */
     this.$contenedorTarjetas = document.querySelector(".contenedor-tarjetas");
     this.$contenedorGeneral = document.querySelector(".contenedor-general");
-    this.$mensaje = document.querySelector("h2 .mensaje");
-    this.$pantallaBloqueada = document.querySelector("h2 .pantalla-bloqueada");
+    this.$mensaje = document.querySelector(".mensaje");
+    this.$pantallaBloqueada = document.querySelector(".pantalla-bloqueada");
     /*eventos*/
     this.eventos();
   }
@@ -74,7 +74,7 @@ class Memorama {
     arrTarjetasAcertadas.forEach((tarjeta) => {
       tarjeta.classList.add("acertada");
       this.tarjetasCorrectas.push(tarjeta);
-      console.log(this.tarjetasCorrectas);
+      this.victoriaJuego();
     });
   }
   reversoTarjetas(arrTarjetas) {
@@ -96,6 +96,18 @@ class Memorama {
       }
       this.verificaTarjetas.splice(0);
       this.agregarTarjetas.splice(0);
+    }
+  }
+  /*Victoria de juego*/
+  victoriaJuego() {
+    if (this.tarjetasCorrectas.length === this.numeroTarjetas) {
+      setTimeout(() => {
+        this.$pantallaBloqueada.style.display = "block";
+        this.$mensaje.innerText = "Felicidades has ganado";
+      }, 1000);
+      setTimeout(() => {
+        location.reload();
+      }, 4000);
     }
   }
 }
