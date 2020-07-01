@@ -7,6 +7,7 @@ class Memorama {
     this.errores = 0;
     this.dificultad = "";
     this.tarjetasCorrectas = [];
+
     this.agregarTarjetas = [];
     /**Propiedades HTML */
     this.$contenedorTarjetas = document.querySelector(".contenedor-tarjetas");
@@ -47,30 +48,55 @@ class Memorama {
   /*al darle click alas tarjetas */
   comienzaJuego() {
     let tarjeta = document.querySelectorAll(".tarjeta");
-    tarjeta.forEach((targeta) => {
-      targeta.addEventListener("click", (e) => {
+    tarjeta.forEach((tarjeta) => {
+      tarjeta.addEventListener("click", (e) => {
         this.clickTarjeta(e);
       });
     });
   }
-  /*Obtener targeta que se dio clic*/
+  /*Obtener tarjeta que se dio clic*/
   clickTarjeta(e) {
     this.voltearTarjetas(e);
     let sourceImage = e.target.childNodes[0].attributes[1].value;
     this.verificaTarjetas.push(sourceImage);
-    let targeta = e.target;
-    this.agregarTarjetas.unshift(targeta);
-
+    let tarjeta = e.target;
+    this.agregarTarjetas.unshift(tarjeta);
+    this.compararTarjetas();
   }
-  /*Voltear targetas*/
-  voltearTarjetas(e){
-e.target.style.backgroundImage="none";
-e.target.style.backgroundColor="white";
-e.target.childNodes[0].style.display="block";
+  /*Voltear tarjetas*/
+  voltearTarjetas(e) {
+    e.target.style.backgroundImage = "none";
+    e.target.style.backgroundColor = "white";
+    e.target.childNodes[0].style.display = "block";
+  }
+  /*Fijar acertado*/
+  fijarAcertado(arrTarjetasAcertadas) {
+    arrTarjetasAcertadas.forEach((tarjeta) => {
+      tarjeta.classList.add("acertada");
+      this.tarjetasCorrectas.push(tarjeta);
+      console.log(this.tarjetasCorrectas);
+    });
+  }
+  reversoTarjetas(arrTarjetas) {
+    arrTarjetas.forEach((tarjeta) => {
+      setTimeout(() => {
+        tarjeta.style.backgroundImage = "url(../img/cover.jpg)";
+        tarjeta.childNodes[0].style.display = "none";
+      }, 1000);
+    });
   }
   /*Comparar Tarjetas*/
-  compararTarjetas(){
-
+  compararTarjetas() {
+    if (this.verificaTarjetas.length == 2) {
+      if (this.verificaTarjetas[0] === this.verificaTarjetas[1]) {
+        this.fijarAcertado(this.agregarTarjetas);
+      } else {
+        this.reversoTarjetas(this.agregarTarjetas);
+        this.errores++;
+      }
+      this.verificaTarjetas.splice(0);
+      this.agregarTarjetas.splice(0);
+    }
   }
 }
 
