@@ -158,7 +158,7 @@ class Memorama {
   }
   /*Derrota juego errores*/
   incremetadorErrores() {
-    this.$errorcontenedor.innerText = `Errores ${this.errores}`;
+    this.$errorcontenedor.innerText = `# Errores : ${this.errores}`;
   }
   derrotaJuego() {
     if (this.errores === this.numeroIntentos) {
