@@ -36,7 +36,7 @@ class Memorama {
   /*Dificultad del juego*/
   seleccionDificultad() {
     const mensaje = prompt(
-      "selecciona el nivel de dificultad que puede ser :Fácil , Intermedio,Difícil .Si n sellecionas un nivel por defecto el nivel sera intermedio"
+      "Selecciona el nivel de dificultad que puede ser: Fácil , Intermedio, Difícil .Si n seleccionas un nivel por defecto el nivel será intermedio"
     );
     if (
       !mensaje ||
@@ -149,7 +149,7 @@ class Memorama {
     if (this.tarjetasCorrectas.length === this.numeroTarjetas) {
       setTimeout(() => {
         this.$pantallaBloqueada.style.display = "block";
-        this.$mensaje.innerText = "Felicidades has ganado";
+        this.$mensaje.innerText = "Felicidades,¡Has ganado el juego!";
       }, 1000);
       setTimeout(() => {
         location.reload();
@@ -164,7 +164,7 @@ class Memorama {
     if (this.errores === this.numeroIntentos) {
       setTimeout(() => {
         this.$pantallaBloqueada.style.display = "block";
-        this.$mensaje.innerText = "Has perdido";
+        this.$mensaje.innerText = "¡Has perdido el juego!";
       }, 1000);
       setTimeout(() => {
         location.reload();
