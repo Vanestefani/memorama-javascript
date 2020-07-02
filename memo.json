@@ -1,66 +1,66 @@
 [
      {
-          "src": "../img/css3logo.png",
+          "src": "../img/1.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/css3logo.png",
+          "src": "../img/1.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/html5logo.jpg",
+          "src": "../img/2.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/html5logo.jpg",
+          "src": "../img/2.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/pythonlogo.png",
+          "src": "../img/3.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/pythonlogo.png",
+          "src": "../img/3.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/phplogo.png",
+          "src": "../img/4.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/phplogo.png",
+          "src": "../img/4.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/cpluspluslogo.png",
+          "src": "../img/5.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/cpluspluslogo.png",
+          "src": "../img/5.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/jslogo.png",
+          "src": "../img/6.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/jslogo.png",
+          "src": "../img/6.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/javalogo.png",
+          "src": "../img/7.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/javalogo.png",
+          "src": "../img/7.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/golanglogo.png",
+          "src": "../img/8.jpg",
           "default" : "./img/cover.jpg"
      },
      {
-          "src": "../img/golanglogo.png",
+          "src": "../img/8.jpg",
           "default" : "./img/cover.jpg"
      }
 ]
