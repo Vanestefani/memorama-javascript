@@ -1,8 +1,7 @@
 # Juego de memoria 
 
 
-Juego de memoria desarrollado con javascript y HTML5 ,puedes elegir el nivel de dificultad 
-
+Juego de memoria desarrollado con javascript y HTML5 ,puedes elegir el nivel de dificultad
 
 # Inicio
 ![inicio](Pantallazos/1.png)
